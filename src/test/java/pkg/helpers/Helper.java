@@ -22,8 +22,7 @@ public class Helper {
     public static Properties property() {
         try {
             Properties properties = new Properties();
-
-            FileInputStream fileInputStream = new FileInputStream("/Users/Ushima/ui-automation-poc/src/test/resources/config/config.properties");
+            FileInputStream fileInputStream = new FileInputStream("src/test/resources/config/config.properties");
             properties.load(fileInputStream);
             return properties;
         } catch (Exception e) {
@@ -34,10 +33,10 @@ public class Helper {
     }
 
     public static void webDriverStart() {
-        System.setProperty("webdriver.chrome.driver", "/Users/Ushima/ui-automation-poc/src/test/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://itera-qa.azurewebsites.net/home/automation?");
+        driver.get("https://magento.softwaretestingboard.com/");
     }
 
     public static void webDriverQuit() {
